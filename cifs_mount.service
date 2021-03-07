@@ -1,0 +1,12 @@
+[Unit]
+Description=cifs auto mount
+After=network.target
+
+[Service]
+ExecStartPre=/bin/sleep 20
+ExecStart=/home/pi/usb_sync/cifs_mount.sh
+Type=oneshot
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

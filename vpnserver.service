@@ -1,0 +1,12 @@
+[Unit]
+Description=SoftEther VPN Client Auto Start
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/home/pi/vpnclient/vpnclient start
+ExecStop=/home/pi/vpnclient/vpnclient stop
+RestartSec=3s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Usb auto backup
+After=network.target
+
+[Service]
+ExecStartPre=/bin/sleep 30
+ExecStart=/home/pi/usb_sync/usb_sync.sh
+Type=oneshot
+RemainAfterExit=yes
